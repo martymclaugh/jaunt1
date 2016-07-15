@@ -4,10 +4,14 @@ class User < ActiveRecord::Base
   include BCrypt
 
   has_many :posts
-  has_many :follows, foreign_key: "follower_id"
-  has_many :follows, foreign_key: "followee_id"
-  has_many :followers, through: :follows, source: :follower
-  has_many :followees, through: :follows, source: :followee
+  has_many :follows, foreign_key: :follower_id, class_name: Follow
+  has_many :follows, foreign_key: :following_id, class_name: Follow
+  has_many :follower, through: :follows, source: :following
+  has_many :following, through: :follows, source: :follower
+
+  validates :full_name, presence: true
+  validates :username, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true
 
   def password
     @password ||= Password.new(password_hash)
