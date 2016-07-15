@@ -1,3 +1,4 @@
 class Post < ActiveRecord::Base
-  # Remember to create a migration!
+  belongs_to :user
+  validates :text, length: { maximum: 140 }
 end

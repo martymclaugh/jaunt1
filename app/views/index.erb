@@ -1,0 +1,84 @@
+
+<% if @error %>
+  <%= @error %>
+<% end %>
+
+<main>
+
+
+<div align="center">
+
+<body style="background-color:powderblue;">
+<img src="http://www.pd4pic.com/images/penguin-bird-cool-rapper-gangster-sun-glasses.png" alt="Gangsta Hepi C" style="width:20%;height:15%;">
+<h1>Lil' Twits</h1>
+
+
+<h2>Login</h2>
+  <form class="pure-form" action ="/users" method="post" style="color:#737373">
+    <input type="text" name="username" placeholder="username">
+    <input type="password" name="password" placeholder="password">
+    <button type="submit" class="pure-button pure-button-primary">Login</button>
+  </form>
+
+
+<p>Don't have a login?</p>
+
+
+<h2>Register</h2>
+
+<form class="pure-form pure-form-aligned" method="post" action="/users">
+    <fieldset style="color:#737373">
+        <div class="pure-control-group">
+            <label for="full_name">Full Name</label>
+            <input name="full_name" id="full_name" type="text" placeholder="your name">
+        </div>
+
+        <div class="pure-control-group">
+            <label for="email">Email</label>
+            <input name="email" type="text" placeholder="email">
+        </div>
+
+        <div class="pure-control-group">
+            <label for="username">Username</label>
+            <input name="username" type="text" placeholder="username">
+        </div>
+
+        <div class="pure-control-group">
+            <label for="password1">Password</label>
+            <input name="password1" type="password" placeholder="password">
+        </div>
+
+        <div class="pure-control-group">
+            <label for="password2">Confirm Password</label>
+            <input name="password2" type="password" placeholder="confirm password">
+        </div>
+
+        <div class="pure-controls">
+            <label for="cb" class="pure-checkbox">
+                <input id="cb" type="checkbox"> I've read the terms and conditions
+            </label>
+
+            <button type="submit" class="pure-button pure-button-primary">Submit</button>
+        </div>
+    </fieldset>
+</form>
+</div>
+
+</main>
+
+<!-- <form class="pure-form pure-form-aligned" action ="/users/:id" method="post">
+  <fieldset>
+    <div class="pure-control-group">
+    Enter Full Name: <input type="text" name="full_name" placeholder="full name"><br>
+    Enter Email: <input type="text" name="email" placeholder="email address"><br>
+    Enter Username: <input type="text" name="username" placeholder="username"><br>
+    Enter Password: <input type="password" name="password1" placeholder="password"><br>
+    Confirm Password: <input type="password" name="password2" placeholder="confirm password"><br>
+    <div class="pure-controls">
+      <label for="cb" class="pure-checkbox">
+          <input id="cb" type="checkbox"> I've read the terms and conditions
+      </label>
+      <button type="submit" class="pure-button pure-button-primary">Register</button>
+    </div>
+  </fieldset>
+</form> -->
