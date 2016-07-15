@@ -1,5 +1,8 @@
 post '/users' do
-  if params[:password1] == params[:password2]
+  if User.authenticate(params[:username], params[:password])
+    login(user)
+    redirect '/users'
+  elsif params[:password1] == params[:password2]
     user = User.create(username: params[:username], full_name: params[:full_name], email: params[:email], password: params[:password2])
     if user
       login(user)
@@ -17,9 +20,3 @@ get '/logout' do
 end
 
 
-post '/' do
-  if User.authenticate(params[:username], params[:password])
-    login(user)
-    redirect '/users'
-  end
-end
