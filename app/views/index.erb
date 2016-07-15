@@ -3,44 +3,55 @@
   <%= @error %>
 <% end %>
 
+<main>
+
+
+<div align="center">
+
 <body style="background-color:powderblue;">
 <img src="http://www.pd4pic.com/images/penguin-bird-cool-rapper-gangster-sun-glasses.png" alt="Gangsta Hepi C" style="width:20%;height:15%;">
 <h1 style="color:yellow;">Lil' Twits</h1>
 
-<h1>Login</h1>
-  <form class="pure-form" action ="/users/:id" method="post">
+
+<h2 style="color:#bf8040">Login</h2>
+  <form class="pure-form" action ="/users/:id" method="post" style="color:#737373">
     <input type="text" name="username" placeholder="username">
     <input type="password" name="password" placeholder="password">
-    <input type="submit" value="Login"></input>
+    <button type="submit" class="pure-button pure-button-primary">Login</button>
+    <!-- <input type="submit" value="Login"></input> -->
   </form>
-
 
 
   <p>Don't have a login?</p>
 
 
-<h1>Register</h1>
+<h2 style="color:#bf8040">Register</h2>
 
 <form class="pure-form pure-form-aligned">
-    <fieldset>
+    <fieldset style="color:#737373">
         <div class="pure-control-group">
             <label for="full_name">Full Name</label>
             <input name="full_name" id="full_name" type="text" placeholder="your name">
         </div>
 
         <div class="pure-control-group">
-            <label for="password">Password</label>
-            <input id="password" type="password" placeholder="Password">
+            <label for="email">Email</label>
+            <input name="email" type="text" placeholder="email">
         </div>
 
         <div class="pure-control-group">
-            <label for="email">Email Address</label>
-            <input id="email" type="email" placeholder="Email Address">
+            <label for="username">Username</label>
+            <input name="username" type="text" placeholder="username">
         </div>
 
         <div class="pure-control-group">
-            <label for="foo">Supercalifragilistic Label</label>
-            <input id="foo" type="text" placeholder="Enter something here...">
+            <label for="password1">Password</label>
+            <input name="password1" type="password" placeholder="password">
+        </div>
+
+        <div class="pure-control-group">
+            <label for="password2">Confirm Password</label>
+            <input name="password2" type="password" placeholder="confirm password">
         </div>
 
         <div class="pure-controls">
@@ -52,9 +63,11 @@
         </div>
     </fieldset>
 </form>
+</div>
 
+</main>
 
-<form class="pure-form pure-form-aligned" action ="/users/:id" method="post">
+<!-- <form class="pure-form pure-form-aligned" action ="/users/:id" method="post">
   <fieldset>
     <div class="pure-control-group">
     Enter Full Name: <input type="text" name="full_name" placeholder="full name"><br>
@@ -69,4 +82,4 @@
       <button type="submit" class="pure-button pure-button-primary">Register</button>
     </div>
   </fieldset>
-</form>
+</form> -->
