@@ -2,11 +2,11 @@
 
 <img src="http://www.pd4pic.com/images/penguin-bird-cool-rapper-gangster-sun-glasses.png" alt="Gangsta Hepi C" style="width:20%;height:15%;">
 
-<h1 style="color:yellow;">Welcome <%= @user.full_name%> Lil' Twits</h1>
+<h1 style="color:yellow;">Welcome to Lil' Twits, <%= @user.full_name %>!</h1>
 
 <div class="follow_info">
   <h3 id="followers_count">Followers: <%= Follow.where(followee_id: @user.id).length %> lil' twitees</h3>
-  <h3 id="followees_count">Following:<%= Follow.where(follower_id: @user.id).length %> lil' twitees</h3>
+  <h3 id="followees_count">Following: <%= Follow.where(follower_id: @user.id).length %> lil' twitees</h3>
 </div>
 
 <div class="write_twit">
@@ -18,7 +18,10 @@
 </div>
 
 <div class="feed">
-  <h2 style="color:orange"><%= @user.full_name%>'s Bird FEED </h2>
+  <h2 style="color:orange"><%= @user.full_name %>'s Bird FEED </h2>
+  <% @user.following.posts.each do |post| %>
+      <li> <%= post.text %> </li>
+  <% end %>
 </div>
 
 

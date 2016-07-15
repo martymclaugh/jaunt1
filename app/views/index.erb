@@ -14,7 +14,7 @@
 
 
 <h2>Login</h2>
-  <form class="pure-form" action ="/users/:id" method="post" style="color:#737373">
+  <form class="pure-form" action ="/users" method="post" style="color:#737373">
     <input type="text" name="username" placeholder="username">
     <input type="password" name="password" placeholder="password">
     <button type="submit" class="pure-button pure-button-primary">Login</button>
@@ -27,7 +27,7 @@
 
 <h2>Register</h2>
 
-<form class="pure-form pure-form-aligned">
+<form class="pure-form pure-form-aligned" method="post" action="/users">
     <fieldset style="color:#737373">
         <div class="pure-control-group">
             <label for="full_name">Full Name</label>
