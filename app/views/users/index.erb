@@ -4,22 +4,24 @@
 
 <h1 style="color:yellow;">Welcome to Lil' Twits, <%= @user.full_name %>!</h1>
 
+
 <div class="follow_info">
-  <h3 id="followers_count">Followers: <%= Follow.where(followee_id: @user.id).length %> lil' twitees</h3>
-  <h3 id="followees_count">Following: <%= Follow.where(follower_id: @user.id).length %> lil' twitees</h3>
+  <h3 id="followers_count">Followers: <%= Follow.where(following_id: @user.id).length %> lil' twitees</h3>
+  <h3 id="followings_count">Following: <%= Follow.where(follower_id: @user.id).length %> lil' twitees</h3>
 </div>
 
 <div class="write_twit">
   <h2 style="color:orange">Whatsup lil' twit?</h2>
-  <form action ="/users/" method="post">
+  <form action ="/posts" method="post">
       <input type="text" name="twit" placeholder="Write your lil' twit here">
       <input type="submit" value="twit"></input>
   </form>
 </div>
 
+
 <div class="feed">
   <h2 style="color:orange"><%= @user.full_name %>'s Bird FEED </h2>
-  <% @user.following.posts.each do |post| %>
+   <% @user.posts.each do |post| %>
       <li> <%= post.text %> </li>
   <% end %>
 </div>

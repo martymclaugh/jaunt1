@@ -3,7 +3,4 @@ get '/users' do
   erb :'users/index'
 end
 
-post '/users' do
-  @post = Post.create(user_id: session[:user_id], text: params[:twit])
-  redirect '/users'
-end
+
