@@ -1,11 +1,24 @@
 > **Note**: This branch (master) contains a skeleton without any app code, perfect for creating a _new_ application or challenge. If you're looking for an example app built with this skeleton, take a look at the [example](/../..//tree/example) branch which includes basic CRUD and RSpec tests.
 
 ### Purpose
-The Sinatra Skeleton:
 
-1. Provides a foundation for building challenges or creating a new Sinatra application.
-2. Demonstrates a reasonable set of practices around building Sinatra applications.
-3. Eases the transition to Rails for Dev Bootcamp students
+Lil Twits MVP:
+
+1. Users can register/login
+2. Users have a homepage
+  - can see the twits of the people they are following
+  - Users can post twits of 140 chars
+  - Users can search for other users
+3. Users have a profile page
+  - Users can post twits of 140 chars
+  - Show a followers/following count
+  - Have a follow button
+
+Stretch
+
+1. Have the follow button change into an unfollow button
+2. Retweet functionality
+3. Like functionality
 
 ### Quickstart
 

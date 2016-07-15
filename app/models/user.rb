@@ -1,3 +1,29 @@
 class User < ActiveRecord::Base
-  # Remember to create a migration!
+
+
+  include BCrypt
+
+  has_many :posts
+  has_many :follows, foreign_key: "follower_id"
+  has_many :follows, foreign_key: "followee_id"
+  has_many :followers, through: :follows, source: :follower
+  has_many :followees, through: :follows, source: :followee
+
+  def password
+    @password ||= Password.new(password_hash)
+  end
+
+  def password=(new_password)
+    @password = Password.create(new_password)
+    self.password_hash = @password
+  end
+
+  def self.authenticate(username, password)
+    user = User.find_by(username: username)
+    if user && user.password == password
+      user
+    else
+      nil
+    end
+  end
 end

@@ -1,0 +1,33 @@
+
+<% if @error %>
+  <%= @error %>
+<% end %>
+
+<body style="background-color:powderblue;">
+<img src="http://www.pd4pic.com/images/penguin-bird-cool-rapper-gangster-sun-glasses.png" alt="Gangsta Hepi C" style="width:20%;height:15%;">
+<h1 style="color:yellow;">Lil' Twits</h1>
+
+<h1>Login</h1>
+  <form action ="/users/:id" method="post">
+    <input type="text" name="username" placeholder="username">
+    <input type="password" name="password" placeholder="password">
+    <input type="submit" value="Login"></input>
+  </form>
+
+
+
+  <p>Don't have a login?</p>
+
+
+<h1>Register</h1>
+
+
+
+<form action ="/users/:id" method="post">
+  Enter Full Name: <input type="text" name="full_name" placeholder="full name"><br>
+  Enter Email: <input type="text" name="email" placeholder="email address"><br>
+  Enter Username: <input type="text" name="username" placeholder="username"><br>
+  Enter Password: <input type="password" name="password1" placeholder="password"><br>
+  Confirm Password: <input type="password" name="password2" placeholder="confirm password"><br>
+  <input type="submit" value="Register">
+</form>
