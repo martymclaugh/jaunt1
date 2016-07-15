@@ -31,7 +31,5 @@ post '/' do
   if User.authenticate(params[:username], params[:password])
     login(user)
     redirect '/users/:id'
-  else
-
   end
 end

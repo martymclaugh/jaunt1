@@ -1,8 +1,8 @@
-<% if @user.id == @profile.id %>
+<% if session[:user_id] == @profile.id %>
   <div class="write_twit">
     <h2 style="color:orange">Whatsup lil' twit?</h2>
     <form action ="/users/:id" method="post">
-        <input type="text" name="twit" placeholder="Write your lil'   twit here">
+        <input type="text" name="twit" placeholder="Write your lil' twit here">
         <input type="submit" value="twit"></input>
     </form>
   </div>
