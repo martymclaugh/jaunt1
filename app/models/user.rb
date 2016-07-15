@@ -1,6 +1,13 @@
 class User < ActiveRecord::Base
+
+
   include BCrypt
 
+  has_many :posts
+  has_many :follows, foreign_key: "follower_id"
+  has_many :follows, foreign_key: "followee_id"
+  has_many :followers, through: :follows, source: :follower
+  has_many :followees, through: :follows, source: :followee
 
   def password
     @password ||= Password.new(password_hash)
