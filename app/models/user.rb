@@ -9,6 +9,10 @@ class User < ActiveRecord::Base
   has_many :followers, through: :follows, source: :follower
   has_many :followees, through: :follows, source: :followee
 
+  validates :full_name, presence: true
+  validates :username, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true
+  
   def password
     @password ||= Password.new(password_hash)
   end
