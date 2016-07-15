@@ -1,0 +1,17 @@
+<% if @user.id == @profile.id %>
+<div class="write_twit">
+  <h2 style="color:orange">Whatsup lil' twit?</h2>
+  <form action ="/users/:id" method="post">
+      <input type="text" name="twit" placeholder="Write your lil' twit here">
+      <input type="submit" value="twit"></input>
+  </form>
+</div>
+<% end %>
+
+<h2 style="color: yellow"><%= @profile.full_name%>'s Lil' Twits </h2>
+<ul>
+  <% posts = Post.where(user_id: @profile.id) %>
+  <% posts.each do |post| %>
+      <li><%= post.text %></li>
+  <% end %>
+</ul>
