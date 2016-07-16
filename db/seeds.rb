@@ -7,7 +7,7 @@ end
 				user_id: rand(1..100))
 end
 
-50.times do
+1000.times do
 	Follow.create(follower_id: rand(1..100), 
 				following_id: rand(1..100))
 end
