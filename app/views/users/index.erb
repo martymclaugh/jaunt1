@@ -49,18 +49,25 @@
           <button type="submit" formmethod="post" formaction="/posts/:post_id/upvotes/new">&#8657;</button>
         </form> -->
         <form method="post">
-          <button type="submit" formmethod="post" formaction="/posts/<%=post.id%>/upvotes/new">&#8657;</button>
+          <button type="submit" formmethod="post" formaction="/posts/<%=post.id%>/upvotes/new">&#x25B2;</button>
         </form>
+        
         <% if post.votes > 0 %>
-          <%= post.votes %>
+          <div style="font-size: 16; color: green; font-weight: 900; ">
+            <%= post.votes %>
+          </div>
         <% elsif post.votes < 0 %>
-          <%= post.votes %>
+          <div style="font-size: 16; color: red; font-weight: 900; ">
+            <%= post.votes %>
+          </div>
         <% else %>
-          <%= post.votes %>
+          <div style="font-size: 16; color: gray; font-weight: 900; ">
+            <%= post.votes %>
+          </div>
         <% end %>
-
+        </div>
         <form method="post">
-          <button type="submit" formmethod="post" formaction="/posts/<%=post.id%>/downvotes/new">&#8659;</button>
+          <button type="submit" formmethod="post" formaction="/posts/<%=post.id%>/downvotes/new">&#x25BC;</button>
         </form>
       </li>
   <% end %>
