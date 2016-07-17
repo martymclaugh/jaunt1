@@ -1,7 +1,4 @@
 
-<% if @error %>
-  <%= @error %>
-<% end %>
 
 <main>
 
@@ -14,19 +11,27 @@
 
 
 <h2>Login</h2>
-  <form class="pure-form" action ="/users" method="post" style="color:#737373">
+  <form class="pure-form" action ="/login" method="post" style="color:#737373">
     <input type="text" name="username" placeholder="username">
     <input type="password" name="password" placeholder="password">
     <button type="submit" class="pure-button pure-button-primary">Login</button>
   </form>
-
+<p style="color: red">
+<% if @login_error %>
+  <%= @login_error %>
+<% end %>
+</p>
 
 <p>Don't have a login?</p>
 
-
+<p style="color: red">
 <h2>Register</h2>
+<% if @register_error %>
+  <%= @register_error %>
+<% end %>
+</p>
 
-<form class="pure-form pure-form-aligned" method="post" action="/users">
+<form class="pure-form pure-form-aligned" method="post" action="/register">
     <fieldset style="color:#737373">
         <div class="pure-control-group">
             <label for="full_name">Full Name</label>
