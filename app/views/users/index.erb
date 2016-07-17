@@ -24,6 +24,11 @@
       <input type="submit" value="Follow"></input>
     </form>
   <% end %>
+  <p style="color: red">
+    <% if @follow_error %>
+      <%= @follow_error %>
+    <% end %>
+    </p>
 </div>
 
 <div class="write_twit">
