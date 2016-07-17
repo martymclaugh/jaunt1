@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   include BCrypt
 
   has_many :posts
+  has_many :upvotes
+  has_many :downvotes
   has_many :follows, foreign_key: :follower_id, class_name: "Follow"
   has_many :follows, foreign_key: :following_id, class_name: "Follow"
   has_many :follower, through: :follows, source: :following

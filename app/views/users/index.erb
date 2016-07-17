@@ -34,7 +34,7 @@
 <div class="write_twit">
   <h2 style="color:orange">Whatsup lil' twit?</h2>
   <form action ="/posts/new" method="post">
-      <input type="text" name="twit" placeholder="Write your lil' twit here">
+      <input type="text" name="twit" placeholder="Write your post here">
       <input type="submit" value="twit"></input>
   </form>
 </div>
@@ -43,6 +43,25 @@
 <div class="feed">
   <h2 style="color:orange"><%= @user.full_name %>'s Bird FEED </h2>
    <% @user.posts.each do |post| %>
-      <li> <%= post.text %> </li>
+      <li> 
+        <%= post.text %>
+<!--         <form method="post">
+          <button type="submit" formmethod="post" formaction="/posts/:post_id/upvotes/new">&#8657;</button>
+        </form> -->
+        <form method="post">
+          <button type="submit" formmethod="post" formaction="/posts/<%=post.id%>/upvotes/new">&#8657;</button>
+        </form>
+        <% if post.votes > 0 %>
+          <%= post.votes %>
+        <% elsif post.votes < 0 %>
+          <%= post.votes %>
+        <% else %>
+          <%= post.votes %>
+        <% end %>
+
+        <form method="post">
+          <button type="submit" formmethod="post" formaction="/posts/<%=post.id%>/downvotes/new">&#8659;</button>
+        </form>
+      </li>
   <% end %>
 </div>
