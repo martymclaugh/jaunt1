@@ -6,17 +6,29 @@
 
 <div class="follow_info">
     <a href="/users/<%= @user.id %>/follower">
-      Followers: <%= Follow.where(following_id: @user.id).length %>
+      Following: <%= Follow.where(follower_id: @user.id).length %>
     </a>
     
     <a href="/users/<%= @user.id %>/following">
-      Following: <%= Follow.where(follower_id: @user.id).length %>
+      Followers: <%= Follow.where(following_id: @user.id).length %>
     </a>
+</div>
+
+<div>
+  <% if @user.following.include?(@online_user) %>
+    <form action ="/users/<%= @user.id %>/unfollow" method="post">
+        <input type="submit" value="Unfollow"></input>
+    </form>
+  <% else %>
+    <form action ="/users/<%= @user.id %>/follow" method="post">
+      <input type="submit" value="Follow"></input>
+    </form>
+  <% end %>
 </div>
 
 <div class="write_twit">
   <h2 style="color:orange">Whatsup lil' twit?</h2>
-  <form action ="/posts" method="post">
+  <form action ="/posts/new" method="post">
       <input type="text" name="twit" placeholder="Write your lil' twit here">
       <input type="submit" value="twit"></input>
   </form>
