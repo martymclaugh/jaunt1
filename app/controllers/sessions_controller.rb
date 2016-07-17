@@ -7,7 +7,7 @@ post '/register' do
       redirect '/users'
     end
   else
-    @error = "Passwords don't match"
+    @register_error = "*Passwords don't match"
     erb :index
   end
 end
@@ -22,5 +22,8 @@ post '/login' do
   if user
     login(user)
     redirect '/users'
+  else
+    @login_error = "*Wrong username or password"
+    erb :index
   end
 end

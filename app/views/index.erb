@@ -1,7 +1,4 @@
 
-<% if @error %>
-  <%= @error %>
-<% end %>
 
 <main>
 
@@ -19,12 +16,20 @@
     <input type="password" name="password" placeholder="password">
     <button type="submit" class="pure-button pure-button-primary">Login</button>
   </form>
-
+<p style="color: red">
+<% if @login_error %>
+  <%= @login_error %>
+<% end %>
+</p>
 
 <p>Don't have a login?</p>
 
-
+<p style="color: red">
 <h2>Register</h2>
+<% if @register_error %>
+  <%= @register_error %>
+<% end %>
+</p>
 
 <form class="pure-form pure-form-aligned" method="post" action="/register">
     <fieldset style="color:#737373">

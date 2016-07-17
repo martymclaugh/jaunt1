@@ -6,8 +6,8 @@
 
 
 <div class="follow_info">
-  <h3 id="followers_count">Followers: <%= Follow.where(following_id: @user.id).length %> lil' twitees</h3>
-  <h3 id="followings_count">Following: <%= Follow.where(follower_id: @user.id).length %> lil' twitees</h3>
+  <a href="/users/:id/followers"></a><h3 id="followers_count">Followers: <%= Follow.where(following_id: @user.id).length %> lil' twitees</h3></a>
+  <a href="/users/:id/following"><h3 id="followings_count">Following: <%= Follow.where(follower_id: @user.id).length %> lil' twitees</h3></a>
 </div>
 
 <div class="write_twit">
@@ -25,8 +25,3 @@
       <li> <%= post.text %> </li>
   <% end %>
 </div>
-
-
-
-
-
