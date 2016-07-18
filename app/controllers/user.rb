@@ -1,6 +1,11 @@
-get '/users' do
-  @user = User.find(session[:user_id])
-  erb :'users/index'
+get '/profile' do
+  if logged_in?
+  	erb :'users/profile'
+  else
+  	@login_error = "*You need to login first"
+    erb :index
+  end
+
 end
 
 get '/users/:user_id' do
@@ -8,3 +13,4 @@ get '/users/:user_id' do
 	@online_user = User.find(session[:user_id])
 	erb :'users/index'
 end
+

@@ -1,44 +1,4 @@
-<body style="background-color:powderblue;">
-
-<img src="http://www.pd4pic.com/images/penguin-bird-cool-rapper-gangster-sun-glasses.png" alt="Gangsta Hepi C" style="width:20%;height:15%;">
-
-
-<h1 style="color:yellow;">Welcome to Lil' Twits, <%= @user.full_name %>!</h1>
-
-<div class="follow_info">
-    <a href="/users/<%= @user.id %>/follower">
-      Following: <%= Follow.where(follower_id: @user.id).length %>
-    </a>
-    
-    <a href="/users/<%= @user.id %>/following">
-      Followers: <%= Follow.where(following_id: @user.id).length %>
-    </a>
-</div>
-
-<div>
-  <% if @user.following.include?(@online_user) %>
-    <form action ="/users/<%= @user.id %>/unfollow" method="post">
-        <input type="submit" value="Unfollow"></input>
-    </form>
-  <% else %>
-    <form action ="/users/<%= @user.id %>/follow" method="post">
-      <input type="submit" value="Follow"></input>
-    </form>
-  <% end %>
-
-  <p style="color: red">
-    <% if @vote_error %>
-      <%= @vote_error %>
-      <%p "!" * 200 %>
-    <% end %>
-  </p>
-
-  <p style="color: red">
-    <% if @follow_error %>
-      <%= @follow_error %>
-    <% end %>
-    </p>
-</div>
+WELCOME TO YOUR PROFILE
 
 <div class="write_twit">
   <h2 style="color:orange">Whatsup lil' twit?</h2>
@@ -47,7 +7,6 @@
       <input type="submit" value="twit"></input>
   </form>
 </div>
-
 
 <div class="feed">
   <h2 style="color:orange"><%= @user.full_name %>'s Bird FEED </h2>
