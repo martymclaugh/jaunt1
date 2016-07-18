@@ -1,5 +1,7 @@
 get '/profile' do
 	@user = User.find(session[:user_id])
+	p @user.posts
+	p @user.following
   if logged_in?
   	erb :'users/profile'
   else
