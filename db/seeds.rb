@@ -3,10 +3,6 @@
 # end
 
 
-# 100.times do
-#   Follow.create(follower_id: rand(1..100), 
-#         following_id: rand(1..100))
-# end
 
 
 # Users
@@ -27,8 +23,8 @@ User.create!(full_name:  "Example User",
 end
 
 1000.times do
-	Post.create(text: Faker::Lorem.sentence(4),
-				user_id: rand(1..100))
+  Post.create(text: Faker::Lorem.sentence(4),
+        user_id: rand(1..100))
 end
 
 # Microposts
@@ -45,11 +41,15 @@ following = users[2..50]
 followers = users[3..40]
 
 following.each { |followed| Follow.create(following_id: followed.id,
-	follower_id: user.id) }
+  follower_id: user.id) }
 followers.each { |follower| Follow.create(following_id: user.id,
-	follower_id: follower.id) }
+  follower_id: follower.id) }
 
 
+1000.times do
+  Follow.create(follower_id: rand(1..100), 
+        following_id: rand(1..100))
+end
 
 
 

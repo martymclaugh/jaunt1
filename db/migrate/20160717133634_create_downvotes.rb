@@ -7,5 +7,6 @@ class CreateDownvotes < ActiveRecord::Migration
 
 	    t.timestamps null: false
 	end
+	add_index :downvotes, [:user_id, :post_id], unique: true
   end
 end
