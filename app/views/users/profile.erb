@@ -1,0 +1,50 @@
+<h2>WELCOME TO YOUR PROFILE</h2>
+
+<div class="follow_info">
+    <a class="follow-link" href="/users/<%= @user.id %>/follower">
+      Following: <%= Follow.where(follower_id: @user.id).length %>
+    </a>
+
+    <a class="follow-link" href="/users/<%= @user.id %>/following">
+      Followers: <%= Follow.where(following_id: @user.id).length %>
+    </a>
+</div>
+
+<div class="write_post">
+  <form action ="/posts/new" method="post">
+      <input type="text" name="post" placeholder="Write your post here">
+      <input type="submit" class="pure-button pure-button-primary" value="post"></input>
+  </form>
+</div>
+
+<div class="feed">
+  <h2>Headlines </h2>
+   <% @user.posts.each do |post| %>
+      <li> 
+        <%= post.text %>
+        <div class="vote">
+        <form method="post">
+          <button class="pure-button pure-button-primary" type="submit" formmethod="post" formaction="/posts/<%=post.id%>/upvotes/new">&#x25B2;</button>
+        </form>
+        
+        <% if post.votes > 0 %>
+          <div style="font-size: 16; color: #00EE00 ; font-weight: 900; ">
+            <%= post.votes %>
+          </div>
+        <% elsif post.votes < 0 %>
+          <div style="font-size: 16; color: red; font-weight: 900; ">
+            <%= post.votes %>
+          </div>
+        <% else %>
+          <div style="font-size: 16; color: white; font-weight: 900; ">
+            <%= post.votes %>
+          </div>
+        <% end %>
+        </div>
+        <form method="post">
+          <button class="pure-button pure-button-primary" type="submit" formmethod="post" formaction="/posts/<%=post.id%>/downvotes/new">&#x25BC;</button>
+        </form>
+        </div>
+      </li>
+  <% end %>
+</div>

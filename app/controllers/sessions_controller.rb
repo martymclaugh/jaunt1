@@ -2,9 +2,7 @@ post '/register' do
   if params[:password1] == params[:password2]
     user = User.create(username: params[:username], full_name: params[:full_name], email: params[:email], password: params[:password2])
     if user
-      p user
-      login(user)
-      redirect '/users'
+      redirect '/'
     end
   else
     @register_error = "*Passwords don't match"
@@ -21,7 +19,7 @@ post '/login' do
   user = User.authenticate(params[:username], params[:password])
   if user
     login(user)
-    redirect '/users'
+    redirect '/profile'
   else
     @login_error = "*Wrong username or password"
     erb :index

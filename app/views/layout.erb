@@ -23,7 +23,7 @@
 </head>
 <body>
 
-  <div>
+<main class="page">
     <style scoped>
         .home {
             color: white;
@@ -37,12 +37,13 @@
     </style>
 
 
-  <button class="home pure-button" style="color:#ffcccc"><a href="/" style="color:#ffffff">Home</a></button>
+  <button class="home pure-button" style="color:#ffcccc"><a href="/profile" style="color:#ffffff">Home</a></button>
 
   <% if logged_in? %>
     <a href="/logout">Logout</a>
   <% end %>
   <br>
   <%= yield %>
+  </main>
 </body>
 </html>

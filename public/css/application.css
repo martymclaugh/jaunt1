@@ -1,10 +1,50 @@
-h1 {
-  color:yellow;
-  font-family: 'Galada', cursive;
-  letter-spacing: 10px;
+@-webkit-keyframes mymove {
+    from {color: gray;}
+    to {color: white;}
 }
+
+h1 {
+	font-size: 200px;
+	letter-spacing: -20px;
+  	color:white;
+  	font-family: 'Galada', font-weight: 900;
+    -webkit-animation: mymove 5s infinite;
+    animation: mymove 5s infinite;
+}
+
 h2 {
-  color:#bf8040;
-  font-family: 'Galada', cursive;
-  letter-spacing: 10px;
+  color:white;
+  font-family: 'Galada', font-weight: 1900;
+  letter-spacing: -1px;
+}
+
+.follow-link {
+  text-decoration: none;
+  color:white;
+  font-family: 'Galada', font-weight: 1900;
+  letter-spacing: 2px;
+}
+.follow-link:hover {
+    color: gray;
+}
+#profile-name {
+	font-size: 60px;
+}
+
+#logo {
+	margin-top: -4%;
+}
+#front-page {
+	margin-top: -6%;
+}
+
+.page {
+	border-radius: 15px 50px;
+    background: #1F45FC;
+    margin: 2%;
+    padding: 20px; 
+}
+
+.vote {
+	display: inline;
 }
