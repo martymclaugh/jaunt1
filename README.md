@@ -3,15 +3,15 @@
 
 ### Purpose
 
-Lil Twits MVP:
+Lil posts MVP:
 
 1. Users can register/login
 2. Users have a homepage
-  - can see the twits of the people they are following
-  - Users can post twits of 140 chars
+  - can see the posts of the people they are following
+  - Users can post posts of 140 chars
   - Users can search for other users
 3. Users have a profile page
-  - Users can post twits of 140 chars
+  - Users can post posts of 140 chars
   - Show a followers/following count
   - Have a follow button
 
