@@ -1,3 +1,3 @@
 <% @followings.each do |following| %>
-      <li> <a class="follow-link" href="/users/<%= following.id %>"><%= following.username %></a> </li>
+      <li> <a class="follow-link" href="/users/<%= following.id %>"><%= following.full_name %></a> </li>
   <% end %>

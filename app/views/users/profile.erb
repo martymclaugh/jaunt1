@@ -1,11 +1,11 @@
 <h2>WELCOME TO YOUR PROFILE</h2>
 
 <div class="follow_info">
-    <a class="follow-link" href="/users/<%= @user.id %>/follower">
+    <a class="follow-link" href="/users/<%= @user.id %>/following">
       Following: <%= Follow.where(follower_id: @user.id).length %>
     </a>
 
-    <a class="follow-link" href="/users/<%= @user.id %>/following">
+    <a class="follow-link" href="/users/<%= @user.id %>/follower">
       Followers: <%= Follow.where(following_id: @user.id).length %>
     </a>
 </div>

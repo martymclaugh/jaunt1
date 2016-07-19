@@ -10,3 +10,4 @@ class CreateDownvotes < ActiveRecord::Migration
 	add_index :downvotes, [:user_id, :post_id], unique: true
   end
 end
+ 

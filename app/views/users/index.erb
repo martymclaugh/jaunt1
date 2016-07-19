@@ -41,6 +41,7 @@
 <div class="feed">
   <h2><%= @user.full_name %>'s FEED </h2>
    <% @user.posts.each do |post| %>
+      <div>post.user</div>
       <li> 
         <%= post.text %>
         <form method="post">
