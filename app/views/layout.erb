@@ -27,23 +27,11 @@
 <body>
 
 <main class="page">
-    <style scoped>
-        .home {
-            color: white;
-            border-radius: 4px;
-            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-        }
 
-        .home {
-            background: #000066;
-        }
-    </style>
-
-
-  <button class="home pure-button" style="color:#ffcccc"><a href="/profile" style="color:#ffffff">Home</a></button>
+  <button class="btn btn-secondary-outline"><a href="/profile">Home</a></button>
 
   <% if logged_in? %>
-    <a href="/logout">Logout</a>
+    <button class="btn btn-secondary"><a href="/logout">Logout</a></button>
   <% end %>
   <br>
   <%= yield %>
@@ -51,7 +39,7 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-  
+
   <script src="/js/application.js"></script>
 </body>
 </html>
