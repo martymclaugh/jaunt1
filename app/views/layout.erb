@@ -15,7 +15,7 @@
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
   -->
-  <link rel="stylesheet" href="/css/normalize.css">
+  <!-- <link rel="stylesheet" href="/css/normalize.css"> -->
   <!--
     application.css is where you put your styles
   -->
@@ -27,13 +27,16 @@
 <body>
 
 <main class="page">
-
-  <button class="btn btn-secondary-outline"><a href="/profile">Home</a></button>
+  <% if logged_in? %>
+    <button class="btn btn-secondary-outline"><a href="/profile">Home</a></button>
+  <% else %>
+    <button class="btn btn-secondary-outline"><a href="/">Home</a></button>
+  <% end %>
 
   <% if logged_in? %>
     <button class="btn btn-secondary"><a href="/logout">Logout</a></button>
   <% end %>
-  <br>
+    <br>
   <%= yield %>
   </main>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

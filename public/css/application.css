@@ -40,7 +40,7 @@ h2 {
 }
 
 .page {
-	border-radius: 15px 50px;
+	  border-radius: 15px 50px;
     background: #1F45FC;
     margin: 2%;
     padding: 20px; 
@@ -48,4 +48,10 @@ h2 {
 
 .vote {
 	display: inline;
+}
+.btn-secondary:{
+  background-color: white;
+}
+.btn-secondary:hover {
+  background-color: #C0C0C0;
 }

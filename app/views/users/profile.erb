@@ -19,7 +19,11 @@
 
 <div class="feed">
   <h2>Headlines </h2>
-   <% @user.posts.each do |post| %>
+  <% p @feed_posts %>
+  <% p "!" * 100%>
+  <% @feed_posts.each do |post| %>
+  <% User.find(post.user_id).username %>
+
       <li> 
         <%= post.text %>
         <div class="vote">
@@ -39,12 +43,14 @@
           <div style="font-size: 16; color: white; font-weight: 900; ">
             <%= post.votes %>
           </div>
-        <% end %>
+
         </div>
         <form method="post">
           <button class="pure-button pure-button-primary" type="submit" formmethod="post" formaction="/posts/<%=post.id%>/downvotes/new">&#x25BC;</button>
         </form>
         </div>
       </li>
+      <p><%= post.created_at %></p>
+          <% end %>
   <% end %>
 </div>
