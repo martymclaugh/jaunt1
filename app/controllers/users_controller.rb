@@ -1,5 +1,5 @@
 get '/profile' do
-	@user = User.find(session[:user_id])
+	@user = User.find(session[:id])
 	@feed = []
 	@user.following.each {|user| user.posts.each{|post|  @feed << post}}
 	@user.posts.each {|post| @feed << post}
@@ -15,7 +15,8 @@ end
 
 get '/users/:user_id' do
 	@user = User.find(params[:user_id])
-	@online_user = User.find(session[:user_id])
+	p @user
+	@online_user = User.find(session[:id])
 	if @user.id == @online_user.id
 		redirect '/profile'
 	else

@@ -26,6 +26,8 @@ h2 {
 }
 .follow-link:hover {
     color: gray;
+    text-decoration: none;
+
 }
 
 #profile-name {
@@ -40,7 +42,8 @@ h2 {
 }
 
 .page {
-	  border-radius: 15px 50px;
+	  border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
     background: #1F45FC;
     margin: 2%;
     padding: 20px; 
@@ -54,4 +57,15 @@ h2 {
 }
 .btn-secondary:hover {
   background-color: #C0C0C0;
+}
+
+/*.feed:{
+   position:fixed;
+   height: 200px; 
+   overflow-y: scroll;
+}
+*/
+.top-page:{
+  position:fixed;
+  top: 0px;
 }

@@ -11,7 +11,7 @@ post '/register' do
 end
 
 get '/logout' do
-  session[:user_id] = nil
+  logout
   redirect '/'
 end
 
@@ -25,3 +25,7 @@ post '/login' do
     erb :index
   end
 end
+
+# get '/sessions-inspect' do
+#   session.inspect
+# end
